@@ -1,5 +1,5 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
-import { ApiBody, ApiTags } from '@nestjs/swagger';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { ApiBody, ApiOperation, ApiParam, ApiTags } from '@nestjs/swagger';
 import { UserDto } from './dto/user.dto';
 import { UsersService } from './users.service';
 
@@ -8,13 +8,20 @@ import { UsersService } from './users.service';
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
-  @Get('hi')
-  async getHello() {
-    return {
-      message: 'heloooo!',
-    };
+  @ApiOperation({ description: 'get all users' })
+  @Get()
+  async getAllUsers() {
+    return this.usersService.getAll();
   }
 
+  @ApiOperation({ description: 'get user by his name' })
+  @ApiParam({ name: 'name', type: 'string' })
+  @Get(':name')
+  async getUserByName(@Param('name') name) {
+    return this.usersService.findOneFromDb(name);
+  }
+
+  @ApiOperation({ description: 'create a new user account' })
   @ApiBody({ type: UserDto })
   @Post()
   async createUser(@Body() user: UserDto) {

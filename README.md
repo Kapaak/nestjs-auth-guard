@@ -10,13 +10,15 @@
 - with this JWT I can send get request on /profile to access it
 - setup configModule to make .env variables work
 - db connection
+- setup swagger
+- get data from mongoDb -> so that I can start fetching users from mongo rather than local
+- get users from mongodb rather than local
 
 ## What I wanna do now
 
-- get users from mongodb rather than local
+- authguard users routes
 - bcrypt the passwords
 - try to deploy it somewhere
-- setup swagger
 
 ## Weird behavior
 
