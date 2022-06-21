@@ -6,10 +6,10 @@
 
 
 ## What I already have
-- I have local-strategy on auth/login route, which receives username and password and returns JWT
+- I have local-strategy on auth/login route, which receives username and password and returns JWT via jwt-strategy
 - with this JWT I can send get request on /profile to access it
 - setup configModule to make .env variables work
-- I can create a new user in database
+- db connection
 
 
 ## What I wanna do now

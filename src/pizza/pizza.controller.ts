@@ -1,6 +1,9 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 import { PizzaService } from './pizza.service';
 
+
+@ApiTags("pizza")
 @Controller('pizza')
 export class PizzaController {
     constructor(private pizzaService: PizzaService){}
