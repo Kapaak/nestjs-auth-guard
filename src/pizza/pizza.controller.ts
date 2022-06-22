@@ -14,7 +14,7 @@ export class PizzaController {
     return this.pizzaService.getAll();
   }
 
-  @ApiOperation({ description: 'get piza by its id' })
+  @ApiOperation({ description: 'get pizza by its id' })
   @ApiParam({ name: 'id', type: 'number' })
   @Get(':id')
   async getPizzaById(@Param('id') id) {

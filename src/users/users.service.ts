@@ -54,4 +54,12 @@ export class UsersService {
   async getAll(): Promise<Array<User | undefined>> {
     return this.userModel.find().exec();
   }
+
+  async update(username: string): Promise<any> {
+    const exists = await this.userModel.exists({ username });
+
+    if (!exists) throw new NotFoundException();
+
+    return this.userModel.updateOne({ username }, { ...exists, pepe: true });
+  }
 }

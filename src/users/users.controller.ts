@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Put } from '@nestjs/common';
 import { ApiBody, ApiOperation, ApiParam, ApiTags } from '@nestjs/swagger';
 import { UserDto } from './dto/user.dto';
 import { UsersService } from './users.service';
@@ -27,4 +27,16 @@ export class UsersController {
   async createUser(@Body() user: UserDto) {
     return this.usersService.create(user);
   }
+
+  //   @ApiOperation({ description: 'update an existing user' })
+  //   @ApiBody({
+  //     description: 'username',
+  //     type: 'string',
+  //   })
+  //   @Put()
+  //   async updateUser(@Body() { username }) {
+  //     return this.usersService.update(username);
+  //   }
+
+  //v put musim acceptovat i to na co se to ma menit
 }

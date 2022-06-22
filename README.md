@@ -11,8 +11,10 @@
 - setup configModule to make .env variables work
 - db connection
 - setup swagger
-- get data from mongoDb -> so that I can start fetching users from mongo rather than local
+- get data from mongodb -> so that I can start fetching users from mongo rather than local
 - get users from mongodb rather than local
+- create users in mongodb
+- catch errors on some routes
 
 ## What I wanna do now
 
